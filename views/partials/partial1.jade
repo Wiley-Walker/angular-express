@@ -1,1 +1,13 @@
-p This is the partial for view 1.
+a(href='/todo/list') Show all tasks
+h1 Create a task
+  form#todoForm(method='POST', action='/todo')
+    input(type='hidden', name='db_id', value='title')
+    .formfield
+      .formfield--prompt Title:
+        input#todoTitle(type='text', name='title', value='title' style="align:center")
+        .formfield
+          .formfield--prompt Description:
+            textarea#todoDescription(name='description', value='description')
+           
+
+
