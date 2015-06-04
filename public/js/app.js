@@ -10,20 +10,24 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
+    when('/makeTask', {
+      templateUrl: 'partials/makeTask',
       controller: 'MyCtrl1'
     }).
-    when('/view2', {
-      templateUrl: 'partials/partial2',
+    when('/taskList', {
+      templateUrl: 'partials/taskList',
       controller: 'MyCtrl2'
     }).
     when('/login', {
       templateUrl: 'partials/login',
-      controller: 'loginController'
+      controller: 'MyCtrl3'
     }).
+    when('/register', {
+      templateUrl: 'partials/register',
+      controller: 'RegController'
+    }).  
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/'
     });
 
   $locationProvider.html5Mode(true);

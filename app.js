@@ -18,7 +18,7 @@ var errorHandler = require('errorhandler');
 var errorHandler = require('errorhandler');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/agulartodo');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

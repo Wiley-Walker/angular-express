@@ -1,21 +1,25 @@
 extends layout
 
 block body
+  h3 Welcome to the My (Todo) app 
+  h3 Please Login or if not a Member Please Register
   div(ng-controller='AppCtrl')
-    h2 Hello {{name}}
+    | 
     ul.menu
       li
-        a(href='view1') To-Do 1
+        a(href='login') Login
       li
-        a(href='view2') view2
+        a(href='register') Register  
 
     div(ng-view)
 
     div
-      | Angular seed app: v
+      | The Make a Todo App vs.
       span(app-version)
 
     table.table
       tr
-        td Hello
-        td World
+        td by Wiley Walker
+        td and the NSS
+       
+       

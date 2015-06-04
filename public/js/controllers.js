@@ -2,8 +2,8 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('AppCtrl', function ($scope, $http) {
+var controllers = angular.module('myApp.controllers', [])
+  controllers.controller('AppCtrl', function ($scope, $http) {
 
     $http({
       method: 'GET',
@@ -16,12 +16,18 @@ angular.module('myApp.controllers', []).
       $scope.name = 'Error!';
     });
 
-  }).
-  controller('MyCtrl1', function ($scope) {
-    // write Ctrl here
+  })
+  
+  controllers.controller('MyCtrl1', function ($scope) {
+    // write Ctrl-1 here
 
-  }).
-  controller('MyCtrl2', function ($scope) {
-    // write Ctrl here
+  })
+  controllers.controller('MyCtrl2', function ($scope) {
+    // write Ctrl-2 here
 
-  });
+  })
+  controllers.controller('MyCtrl3', function ($scope) {
+    // write Ctrl-3 here
+
+  })
+  

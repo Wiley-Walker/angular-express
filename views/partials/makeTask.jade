@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title
+    |     
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  |   
+  body
+    .row
+      .col-md-3
+      |       
+      .col-md-5(style="background-color:#80C080")
+        a(href='taskList') Show all tasks
+        |         
+        h1 Let's Create a Task
+        |         
+        form#todoForm(method='POST', action='/taskList')
+          input(type='hidden', name='db_id', value='{{todo._id}}')
+          |           
+          .formfield
+            .formfield--prompt Title:
+            |             
+            input#todoTitle(type='text', name='title', value='{{todo.title}}')
+          |           
+          .formfield
+            .formfield--prompt Description:
+            |             
+            textarea#todoDescription(type='text' name='{{todo.description}}')
+          |           
+          .formfield
+            .formfield--prompt Priority:
+            |             
+            input#todoPriority(type='number', name='priority', value='{{todo.priority}}')
+          |           
+          .formfield
+            .formfield--prompt Complete by:
+            |             
+            input#todoDuedate(type='date', name='due_date', value='{{todo.due_date.getFullYear()}} / {{todo.due_date.getDate()}} / {{todo.due_date.getmonth()}}')
+          |           
+          .formfield
+            .formfield--prompt Completed:
+            |             
+            input#todoDone(type='checkbox', name='complete')
+          |           
+          input.submitButton(type='submit')
+          a(href='view2') Login	
+    |     
+    script(src='//code.jquery.com/jquery-1.11.2.min.js')
+    |     
+    script(src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js')
+    |     
+    script(src='http://jqueryvalidation.org/files/dist/additional-methods.min.js')
+    |     
+    script(src='/javascripts/validate.js')

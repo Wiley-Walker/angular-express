@@ -3,6 +3,13 @@ var app = express.Router();
 var UserController = require("../userController");
 var UserModel = require("../models/user");
 
+app.get("/register", function (req, res) {
+  res.render("register", {
+    title: "To Do",
+    subtilte: "My New To Do"
+  });
+});  
+
 // Handle the registration form post
 app.post("/register", function (req, res) {
   var newUser = new UserModel(req.body);
